@@ -7,7 +7,7 @@
 <h4>Trabajo Práctico Especial realizado de manera colaborativa entre Echazú, Candela Azul y Fernández, Daniela Antonella para la materia Web II.</h4>
 
 <h4>Temática</h4>
-<p>Autores y Libros.</p>
+<p>Autores y Libros de terror.</p>
 
 <h4>Breve descripción de la temática</h4>
 <p>Un conjunto de autores con los libros que escribieron.</p>
