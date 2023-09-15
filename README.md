@@ -13,7 +13,7 @@
 <p>Un conjunto de libros de terror con sus respectivos autores.</p>
 
 <h4>Diagrama de entidad relación (DER)</h4>
-![db_library_der](https://github.com/antonellafernandez/TudaiWeb2Tpe2023/assets/134017520/a020b7a7-f5c6-438b-95e6-fe874e86f8cc)
+<p>(Ver branch master)</p>
 
 <h4>Consigna</h4>
 <p>Se propone desarrollar un sitio web dinámico que permita la visualización y administración de un conjunto de ítems. El acceso al sitio estará disponible para cualquier persona, pero solo el usuario administrador tendrá los permisos necesarios para gestionar todos los ítems del sitio, incluyendo la creación, modificación y eliminación de los mismos.</p>
