@@ -1,0 +1,19 @@
+<?php require 'templates/header.phtml' ?>
+
+<div class="text-primary p-3 border border-primary">
+    <p class="fw-bold fst-italic">Editar Autor (<?= $author->id_author ?>) <?= $author->name ?></p>
+
+    <form action="editarAutor/<?= $author->id_author ?>" method="POST">
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input name="name" type="text" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success mt-2">Guardar Cambios</button>
+    </form>
+</div>
+
+<?php require 'templates/footer.phtml' ?>

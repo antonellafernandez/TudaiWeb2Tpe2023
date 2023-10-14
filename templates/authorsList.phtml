@@ -1,0 +1,33 @@
+<?php require 'templates/header.phtml' ?>
+
+<?php if (isset($_SESSION['USER_ID']) && $_SESSION['USER_ID']) : ?>
+    <?php require 'templates/form_add_author.phtml' ?>
+<?php endif ?>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Autores</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php foreach ($authors as $author) : ?>
+            <tr>
+                <th scope="row"><?= $author->id_author ?></th>
+                <td><?= $author->name ?></td>
+                <?php if (isset($_SESSION['USER_ID']) && $_SESSION['USER_ID']) : ?>
+                    <td><a href='eliminarAutor/<?= $author->id_author ?>' type='button' class='btn btn-danger'>Borrar</a></td>
+                    <td><a href='editarAutor/<?= $author->id_author ?>' type='button' class="btn btn-warning">Editar</a></td>
+                <?php endif ?>
+            </tr>
+        <?php endforeach ?>
+    </tbody>
+
+</table>
+
+<p class="mt-3 fst-italic"><b>Mostrando <?= $count ?> autores</b></p>
+
+<?php require 'templates/footer.phtml' ?>

@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 15-09-2023 a las 22:42:27
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Oct 10, 2023 at 11:45 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_library`
+-- Database: `db_library`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `authors`
+-- Table structure for table `authors`
 --
 
 CREATE TABLE `authors` (
@@ -33,7 +33,7 @@ CREATE TABLE `authors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `authors`
+-- Dumping data for table `authors`
 --
 
 INSERT INTO `authors` (`id_author`, `name`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `authors` (`id_author`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `books`
+-- Table structure for table `books`
 --
 
 CREATE TABLE `books` (
@@ -63,7 +63,7 @@ CREATE TABLE `books` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `books`
+-- Dumping data for table `books`
 --
 
 INSERT INTO `books` (`id_book`, `title`, `publication_date`, `id_author`, `synopsis`) VALUES
@@ -88,45 +88,76 @@ INSERT INTO `books` (`id_book`, `title`, `publication_date`, `id_author`, `synop
 (39, 'Heart-Shaped Box', 2007, 10, 'Judas Coyne, estrella de rock retirado de la actividad, pasa sus días de retiro coleccionando todo tipo de artículos relacionados con la magia negra, la brujería y la superstición. Un día, su asistente le informa que por internet se encuentra a la venta un traje que trae escondido un fantasma.'),
 (40, 'The Fireman', 2016, 10, 'Nadie sabe exactamente cuándo comenzó o donde se originó. Una nueva y terrible plaga se está extendiendo como un reguero de pólvora por todo el país, golpeando a las ciudades una por una: Boston, Detroit, Seattle. Los médicos la llaman \'Trychophyton Draco Incendia\'.');
 
+-- --------------------------------------------------------
+
 --
--- Índices para tablas volcadas
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `user` varchar(45) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `user`, `password`) VALUES
+(1, 'webadmin', '$2a$10$syD4YBZdyUVYgb84zn4nu.th8bSWIIUEVHfRABRSNBGEPIMrEIzTy');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `authors`
+-- Indexes for table `authors`
 --
 ALTER TABLE `authors`
   ADD PRIMARY KEY (`id_author`);
 
 --
--- Indices de la tabla `books`
+-- Indexes for table `books`
 --
 ALTER TABLE `books`
   ADD PRIMARY KEY (`id_book`),
   ADD KEY `FK_id_authors` (`id_author`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `authors`
+-- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
   MODIFY `id_author` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de la tabla `books`
+-- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
   MODIFY `id_book` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- Restricciones para tablas volcadas
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `books`
+-- Constraints for table `books`
 --
 ALTER TABLE `books`
   ADD CONSTRAINT `books_ibfk_1` FOREIGN KEY (`id_author`) REFERENCES `authors` (`id_author`);
