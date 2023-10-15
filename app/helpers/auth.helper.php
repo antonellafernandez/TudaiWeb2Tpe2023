@@ -22,8 +22,7 @@ class AuthHelper {
         AuthHelper::init();
 
         // Lista de acciones permitidas sin autenticación
-        $allowedActions = ['listarLibros', 'mostrarAutor', 'verLibrosDelAutor'];
-
+        $allowedActions = ['listarLibros', 'mostrarAutor'];
         $currentAction = !empty($_GET['action']) ? $_GET['action'] : 'listarLibros';
 
         // Verificar si la acción actual no requiere autenticación

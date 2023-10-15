@@ -47,22 +47,19 @@ class LibraryController {
     }
 
     function update($id) {
+        $book = $this->model->getBook($id);
+        $authors = $this->author_model->getAuthors();
+
+        $this->view->showUpdateForm($book, $authors);
+
         if (isset($_POST['title']) && isset($_POST['publication_date']) && isset($_POST['id_author']) && isset($_POST['synopsis'])) {
-            
             $title = $_POST['title'];
             $publication_date = $_POST['publication_date'];
             $id_author = $_POST['id_author'];
             $synopsis = $_POST['synopsis'];
 
             $this->model->updateBookData($id, $title, $publication_date, $id_author, $synopsis);
-
             header('Location: ' . BASE_URL . 'listarLibros');
-            exit;
-        } else {
-            $book = $this->model->getBook($id);
-            $authors = $this->author_model->getAuthors();
-
-            $this->view->showUpdateForm($book, $authors);
         }
     }
 }

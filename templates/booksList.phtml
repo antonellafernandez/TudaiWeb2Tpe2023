@@ -45,7 +45,7 @@
 
                 <td class=" text-center"><?= $book->synopsis ?></td>
                 <?php if (isset($_SESSION['USER_ID']) && $_SESSION['USER_ID']) : ?>
-                    <td><a href='editarLibro/<?= $book->id_book ?>' type='button' class="btn btn-warning">Editar</a></td>
+                    <td><a href='editarLibro/<?= $book->id_book ?>' type='button' class='btn btn-warning'>Editar</a></td>
                     <td><a href='eliminarLibro/<?= $book->id_book ?>' type='button' class='btn btn-danger'>Borrar</a></td>
                 <?php endif ?>
             </tr>

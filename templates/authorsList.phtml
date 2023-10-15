@@ -19,8 +19,8 @@
                 <th scope="row"><?= $author->id_author ?></th>
                 <td><?= $author->name ?></td>
                 <?php if (isset($_SESSION['USER_ID']) && $_SESSION['USER_ID']) : ?>
+                    <td><a href='editarAutor/<?= $author->id_author ?>' type='button' class='btn btn-warning'>Editar</a></td>
                     <td><a href='eliminarAutor/<?= $author->id_author ?>' type='button' class='btn btn-danger'>Borrar</a></td>
-                    <td><a href='editarAutor/<?= $author->id_author ?>' type='button' class="btn btn-warning">Editar</a></td>
                 <?php endif ?>
             </tr>
         <?php endforeach ?>

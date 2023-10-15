@@ -4,7 +4,13 @@ class AuthorModel {
     private $db;
 
     function __construct() {
-        $this->db = new PDO('mysql:host=localhost;dbname=db_library;charset=utf8', 'root', '');
+        $host = DB_HOST;
+        $dbname = DB_NAME;
+        $user = DB_USER;
+        $pass = DB_PASS;
+        $charset = DB_CHARSET;
+
+        $this->db = new PDO("mysql:host=$host;dbname=$dbname;charset=$charset", $user, $pass);
     }
 
     function getAuthors() {
