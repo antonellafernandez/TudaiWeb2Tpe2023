@@ -6,7 +6,7 @@ class LibraryView {
        require 'templates/booksList.phtml';
     }
 
-    public function showUpdateForm() {
+    public function showUpdateForm($book, $authors) {
         require 'templates/form_update_book.phtml';
     }
 

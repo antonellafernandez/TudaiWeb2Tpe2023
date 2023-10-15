@@ -26,7 +26,7 @@ class AuthorController {
         if (isset($_POST['name'])) {
             $name = $_POST['name'];
             $this->model->insertAuthor($name);
-            header('Location: ' . BASE_URL . '/mostrarAutor');
+            header('Location: ' . BASE_URL . 'mostrarAutor');
         }
     }
 
@@ -34,7 +34,7 @@ class AuthorController {
         if (isset($_POST['name'])) {
             $name = $_POST['name'];
             $this->model->updateAuthorName($authorID, $name);
-            header("Location: " . BASE_URL . "/mostrarAutor");
+            header("Location: " . BASE_URL . "mostrarAutor");
             exit;
         } else {
             $author = $this->model->getAuthorById($authorID);
@@ -50,6 +50,7 @@ class AuthorController {
     }
     
     public function deleteAuthorById($authorID) {
-        $this->model->deleteAuthorById($authorID); 
+        $this->model->deleteAuthorById($authorID);
+        header('Location: ' . BASE_URL . 'mostrarAutor');
     }
 }

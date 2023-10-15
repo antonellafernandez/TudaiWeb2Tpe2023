@@ -1,7 +1,9 @@
-<div class="text-primary p-3 border border-primary">
-    <p class="fw-bold fst-italic">Editar Libro - <?= $id_book->title ?></p>
+<?php require 'templates/header_update.phtml' ?>
 
-    <form action="agregarLibro" method="POST">
+<div class="text-primary p-3 border border-primary">
+    <p class="fw-bold fst-italic">Editar Libro</p>
+
+    <form action="editarLibro" method="POST">
         <div class="row">
             <div class="col-3">
                 <div class="form-group">
@@ -34,6 +36,8 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-2">Actualizar</button>
+        <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
     </form>
 </div>
+
+<?php require 'templates/footer.phtml' ?>

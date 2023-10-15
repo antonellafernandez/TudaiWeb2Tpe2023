@@ -38,7 +38,7 @@
     }
 
     function updateBookData($id, $title, $publication_date, $id_author, $synopsis) {
-        $query = $this->db->prepare('UPDATE books SET title = ?, publication_date = ?, id_author = ?, synopsis = ? WHERE id = ?');
+        $query = $this->db->prepare('UPDATE books SET title = ?, publication_date = ?, id_author = ?, synopsis = ? WHERE id_book = ?');
         $query->execute([$title, $publication_date, $id_author, $synopsis, $id]);
     }
 }

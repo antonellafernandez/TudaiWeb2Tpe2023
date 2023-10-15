@@ -11,77 +11,62 @@ class LibraryController {
 
     public function __construct() {
         AuthHelper::verify();
-        
+
         $this->author_model = new AuthorModel();
         $this->model = new LibraryModel();
         $this->view = new LibraryView();
     }
 
     function get() {
-            $books = $this->model->getBooks();
-            $authors = $this->author_model->getAuthors();
+        $books = $this->model->getBooks();
+        $authors = $this->author_model->getAuthors();
 
-            foreach ($books as $book) {
-                $author = $this->author_model->getAuthorById($book->id_author);
-                $book->author = $author;
-            }
+        foreach ($books as $book) {
+            $author = $this->author_model->getAuthorById($book->id_author);
+            $book->author = $author;
+        }
 
-            $this->view->showBooks($books, $authors);
+        $this->view->showBooks($books, $authors);
     }
 
     function delete($id) {
         $this->model->deleteBook($id);
-        header('Location: ' . BASE_URL);
+        header('Location: ' . BASE_URL . 'listarLibros');
     }
 
     function create() {
-        $body = $this->getData();
+        if (isset($_POST['title']) && isset($_POST['publication_date']) && isset($_POST['id_author']) && isset($_POST['synopsis'])) {
+            $title = $_POST['title'];
+            $publication_date = $_POST['publication_date'];
+            $id_author = $_POST['id_author'];
+            $synopsis = $_POST['synopsis'];
 
-        $title = $body['title'];
-        $publication_date = $body['publication_date'];
-        $id_author = $body['id_author'];
-        $synopsis = $body['synopsis'];
+            $id = $this->model->insertBook($title, $publication_date, $id_author, $synopsis);
+            $this->view->showMessage('El libro fue insertado exitosamente con id=' . $id . '.');
 
-        $id = $this->model->insertBook($title, $publication_date, $id_author, $synopsis);
-        header('Location: ' . BASE_URL);
-
-        $this->view->showMessage('El libro fue insertado exitosamente con id=' . $id . '.');
-    }
-    
-    function update($id) {
-        $book = $this->model->getBook($id);
-        $this->view->showUpdateForm();
-        
-        if ($book) {
-            $body = $this->getData();
-
-            $title = $body['title'];
-            $publication_date = $body['publication_date'];
-            $id_author = $body['id_author'];
-            $synopsis = $body['synopsis'];
-
-            $this->model->updateBookData($id, $title, $publication_date, $id_author, $synopsis);
-            header('Location: ' . BASE_URL);
-
-            $this->view->showMessage('El libro con id=' . $id . ' ha sido modificado.');
-        } else {
-            $this->view->showMessage('El libro con id=' . $id . ' no existe.');
+            header('Location: ' . BASE_URL . 'listarLibros');
         }
     }
 
-    function getData() {
-        $title = $_POST['title'];
-        $publication_date = $_POST['publication_date'];
-        $id_author = $_POST['id_author'];
-        $synopsis = $_POST['synopsis'];
+    function update($id) {
+        if (isset($_POST['title']) && isset($_POST['publication_date']) && isset($_POST['id_author']) && isset($_POST['synopsis'])) {
+            
+            $title = $_POST['title'];
+            $publication_date = $_POST['publication_date'];
+            $id_author = $_POST['id_author'];
+            $synopsis = $_POST['synopsis'];
 
-        $body = [
-            'title' => $title,
-            'publication_date' => $publication_date,
-            'id_author' => $id_author,
-            'synopsis' => $synopsis
-        ];
+            $this->model->updateBookData($id, $title, $publication_date, $id_author, $synopsis);
 
-        return $body;
+            header('Location: ' . BASE_URL . 'listarLibros');
+            exit;
+
+            $this->view->showMessage('El libro con id=' . $id . ' ha sido modificado.');
+        } else {
+            $book = $this->model->getBook($id);
+            $authors = $this->author_model->getAuthors();
+
+            $this->view->showUpdateForm($book, $authors);
+        }
     }
 }
