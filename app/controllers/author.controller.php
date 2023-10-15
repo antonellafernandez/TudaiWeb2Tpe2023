@@ -7,14 +7,12 @@ require_once './app/helpers/auth.helper.php';
 class AuthorController {
     private $model;
     private $view;
-    private $authHelper;
     
     public function __construct() {
         AuthHelper::verify();
         
         $this->model = new AuthorModel();
         $this->view = new AuthorsView();
-        $this->authHelper = new AuthHelper();
     }
 
     public function showAuthor() {

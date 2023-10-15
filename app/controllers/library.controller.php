@@ -41,9 +41,7 @@ class LibraryController {
             $id_author = $_POST['id_author'];
             $synopsis = $_POST['synopsis'];
 
-            $id = $this->model->insertBook($title, $publication_date, $id_author, $synopsis);
-            $this->view->showMessage('El libro fue insertado exitosamente con id=' . $id . '.');
-
+            $this->model->insertBook($title, $publication_date, $id_author, $synopsis);
             header('Location: ' . BASE_URL . 'listarLibros');
         }
     }
@@ -60,8 +58,6 @@ class LibraryController {
 
             header('Location: ' . BASE_URL . 'listarLibros');
             exit;
-
-            $this->view->showMessage('El libro con id=' . $id . ' ha sido modificado.');
         } else {
             $book = $this->model->getBook($id);
             $authors = $this->author_model->getAuthors();

@@ -46,7 +46,6 @@ class AuthorModel {
     }
 
     function deleteAuthorById($authorID) {
-
         $query = $this->db->prepare('DELETE FROM authors WHERE id_author = ?');
         $query->execute([$authorID]);
 
