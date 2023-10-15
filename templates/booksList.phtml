@@ -12,7 +12,7 @@
             <th scope="col">Título</th>
             <th scope="col">Año de Publicación</th>
             <th scope="col">Autor</th>
-            <th scope="col">Autor ID</th>
+            <th scope="col"></th>
             <th scope="col">Sinopsis</th>
         </tr>
     </thead>
@@ -24,11 +24,29 @@
                 <td><?= $book->title ?></td>
                 <td><?= $book->publication_date ?></td>
                 <td><?= $book->author->name ?></td>
-                <td class="fw-bold"><?= $book->author->id_author ?></td>
+
+                <td class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Detalle</button>
+                    <ul class="dropdown-menu text-nowrap p-3" aria-labelledby=" dropdownMenuButton"">
+                        <li><span class="fw-bold fst-italic">ID Autor </span><?= $book->author->id_author ?></li>
+                        
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li><span class="fw-bold fst-italic">Libros</span></li>
+                        <?php foreach ($books as $book_author) : ?>
+                            <?php if ($book->author->id_author == $book_author->author->id_author) : ?>
+                                <li><?= $book_author->title ?></li>
+                            <?php endif ?>
+                        <?php endforeach ?>
+                    </ul>
+                </td>
+
                 <td class=" text-center"><?= $book->synopsis ?></td>
                 <?php if (isset($_SESSION['USER_ID']) && $_SESSION['USER_ID']) : ?>
-                    <td><a href='eliminarLibro/<?= $book->id_book ?>' type='button' class='btn btn-danger'>Borrar</a></td>
                     <td><a href='editarLibro/<?= $book->id_book ?>' type='button' class="btn btn-warning">Editar</a></td>
+                    <td><a href='eliminarLibro/<?= $book->id_book ?>' type='button' class='btn btn-danger'>Borrar</a></td>
                 <?php endif ?>
             </tr>
         <?php endforeach ?>

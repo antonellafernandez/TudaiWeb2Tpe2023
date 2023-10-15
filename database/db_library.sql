@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2023 at 11:45 PM
+-- Generation Time: Oct 15, 2023 at 10:00 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -67,10 +67,10 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id_book`, `title`, `publication_date`, `id_author`, `synopsis`) VALUES
-(21, 'Dracula', 1897, 1, 'Jonathan Harker viaja a Transilvania para cerrar un negocio inmobiliario  con un misterioso conde que acaba de comprar varias propiedades en  Londres. Después de un viaje plagado de ominosas señales, Harker es  recogido en el paso de Borgo por un siniestro carruaje que lo llevará,  acunado por el canto de los lobos, a un castillo en ruinas. Tal es el inquietante principio de una novela magistral que alumbró uno de los mitos más populares y poderosos de todos los tiempos: Drácula.La presente edición incluye una detallada cronología y el prefacio del  reputado catedrático y crítico Christopher Frayling, donde se analiza la  figura de Stoker y las circunstancias que propiciaron la creación de Drácula. Asimismo, la perspicaz introducción  a cargo del  especialista Maurice Hindle reflexiona sobre los aspectos más polémicos  en torno al origen del prototipo vampírico. La cuidada traducción es de Mario Montalbán.'),
+(21, 'Dracula', 1897, 1, 'Jonathan Harker viaja a Transilvania para cerrar un negocio inmobiliario  con un misterioso conde que acaba de comprar varias propiedades en  Londres. Después de un viaje plagado de ominosas señales, Harker es  recogido en el paso de Borgo por un siniestro carruaje que lo llevará,  acunado por el canto de los lobos, a un castillo en ruinas. Tal es el  inquietante principio de una novela magistral que alumbró uno de los mitos más populares y poderosos de todos los tiempos: Drácula. La presente edición incluye una detallada cronología y el prefacio del  reputado catedrático y crítico Christopher Frayling, donde se analiza la  figura de Stoker y las circunstancias que propiciaron la creación de Drácula. Asimismo, la perspicaz introducción  a cargo del  especialista Maurice Hindle reflexiona sobre los aspectos más polémicos  en torno al origen del prototipo vampírico. La cuidada traducción es de Mario Montalbán.'),
 (22, 'The Jewel of Seven Stars', 1903, 1, 'Un egiptólogo que intenta resucitar a la momia de Tera, una antigua reina egipcia, encuentra una gema y una fuerza desconocida lo deja sin sentido. En medio de escenas sangrientas y espeluznantes, su hija es poseída por el alma de Tera y su destino depende de devolverle vida al cuerpo momificado de Tera.'),
-(23, 'The Raven', 1845, 2, '"El cuervo" es un poema narrativo del escritor estadounidense Edgar Allan Poe. El poema a menudo se destaca por su musicalidad, lenguaje estilizado y atmósfera sobrenatural. Habla de un amante angustiado que recibe la misteriosa visita de un cuervo parlante.'),
-(24, 'The Black Cat', 1843, 2, '"El gato negro" es un cuento del escritor estadounidense Edgar Allan Poe. En la historia, un narrador anónimo siente un gran afecto por las mascotas hasta que perversamente recurre a abusar de ellas.'),
+(23, 'The Raven', 1845, 2, '\"El cuervo\" es un poema narrativo del escritor estadounidense Edgar Allan Poe. El poema a menudo se destaca por su musicalidad, lenguaje estilizado y atmósfera sobrenatural. Habla de un amante angustiado que recibe la misteriosa visita de un cuervo parlante.'),
+(24, 'The Black Cat', 1843, 2, '\"El gato negro\" es un cuento del escritor estadounidense Edgar Allan Poe. En la historia, un narrador anónimo siente un gran afecto por las mascotas hasta que perversamente recurre a abusar de ellas.'),
 (25, 'Dagon', 1919, 3, 'La historia es el testimonio de un hombre torturado y adicto a la morfina que planea suicidarse por un incidente ocurrido a principios de la Primera Guerra Mundial cuando era oficial de la marina mercante.'),
 (26, 'The Call of Cthulhu', 1928, 3, 'Cthulhu, el dios alado con cara de calamar creado por H. P. Lovecraft, emerge del mar después de siglos de letargo sólo para encontrar sus poderes oscuros inmediatamente sellados por un misterioso mago santo.'),
 (27, 'Frankenstein', 1818, 4, 'La novela narra la historia de Víctor Frankenstein, un joven suizo, estudiante de medicina en Ingolstadt, obsesionado por conocer \"los secretos del cielo y la tierra\". En su afán por desentrañar \"la misteriosa alma del hombre\", Víctor crea un cuerpo a partir de la unión de distintas partes de cadáveres diseccionados.'),
@@ -86,7 +86,8 @@ INSERT INTO `books` (`id_book`, `title`, `publication_date`, `id_author`, `synop
 (37, 'Handling the Undead', 2005, 9, 'Elvy es una abuela viuda que intenta aprender a jugar a la consola y aguanta a Marilyn Manson, sólo para que nieta Flora, antisistema total, se sienta feliz y no vuelva a autolesionarse con cuchillas de afeitar; ya que no soporta a sus padres, ni el mundo en el que vive ni la gente que le rodea.'),
 (38, 'Let the Right One In', 2004, 9, 'Década de 1980; suburbio de Blackeberg, Estocolmo (Suecia). A sus doce años, Oskar es un chico que sufre el acoso y las palizas de sus compañeros de clase. Parece inteligente, y tiene un mórbido interés por la delincuencia y el análisis forense: en un cuaderno almacena viejos recortes de diarios sobre asesinatos. Para desahogarse, suele salir por la noche con un cuchillo, imaginando vengarse de sus acosadores. Es así como en una de esas noches conoce a Eli, quien tiene el aspecto de una chica pálida, de doce años, a la que parece no afectarle el frío y que sólo sale de noche. Aunque al principio Eli no se presenta como una persona amistosa, finalmente entabla amistad con Oskar. Mientras tanto se suceden una serie de asesinatos en el vecindario\r\n\r\nSon varios los personajes de la novela, y por medio de ellos el autor describe la vida en los suburbios de Estocolmo a principios de la década de 1980, y enfoca temas como el lado oscuro de la humanidad, el acoso escolar, drogas, robos, pedofilia, prostitución, pederastia, suicidio y asesinatos. Es también una historia de amor y nostalgia entre un niño que por su timidez vive aislado, y una niña que tiene mucha seguridad en sus acciones, pero también vive de manera aislada, por tener que ocultar su condición y no poder moverse por donde ilumina el sol.'),
 (39, 'Heart-Shaped Box', 2007, 10, 'Judas Coyne, estrella de rock retirado de la actividad, pasa sus días de retiro coleccionando todo tipo de artículos relacionados con la magia negra, la brujería y la superstición. Un día, su asistente le informa que por internet se encuentra a la venta un traje que trae escondido un fantasma.'),
-(40, 'The Fireman', 2016, 10, 'Nadie sabe exactamente cuándo comenzó o donde se originó. Una nueva y terrible plaga se está extendiendo como un reguero de pólvora por todo el país, golpeando a las ciudades una por una: Boston, Detroit, Seattle. Los médicos la llaman \'Trychophyton Draco Incendia\'.');
+(40, 'The Fireman', 2016, 10, 'Nadie sabe exactamente cuándo comenzó o donde se originó. Una nueva y terrible plaga se está extendiendo como un reguero de pólvora por todo el país, golpeando a las ciudades una por una: Boston, Detroit, Seattle. Los médicos la llaman \'Trychophyton Draco Incendia\'.'),
+(49, 'Título', 2023, 1, 'Sinopsis');
 
 -- --------------------------------------------------------
 
@@ -138,13 +139,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id_author` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_author` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id_book` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_book` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `users`
