@@ -23,9 +23,9 @@
                 <div class="form-group">
                     <label>Autor</label>
                     <select name="id_author" class="form-control">
-                        <?php foreach ($authors as $author) { ?>
+                        <?php foreach ($authors as $author) : ?>
                             <option value="<?= $author->id_author ?>"><?= $author->name ?></option>
-                        <?php } ?>
+                        <?php endforeach ?>
                     </select>
                 </div>
             </div>

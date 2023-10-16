@@ -1,7 +1,7 @@
 <?php 
 
 class AuthorsView {
-    function showAuthors ($authors) {
+    function showAuthors ($authors, $books) {
         $count = count($authors);
         require 'templates/authorsList.phtml'; 
     }
