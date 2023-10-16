@@ -51,13 +51,6 @@ class AuthorController {
         }
     }
     
-    public function showBooks_Author($authorID) {
-        AuthHelper::verify();
-
-        $books_Author = $this->model->getBooksByAuthorID($authorID);
-        // VER
-    }
-    
     public function deleteAuthorById($authorID) {
         AuthHelper::verify();
         

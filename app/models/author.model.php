@@ -43,14 +43,6 @@ class AuthorModel {
         return $this->db->lastInsertId();
     }
 
-    public function getBooksByAuthorID($authorID) {
-        $query = $this->db->prepare('SELECT a.* FROM books a INNER JOIN authors b ON a.FK_id_authors = b.id WHERE b.id = ?');
-        $query->execute([$authorID]);
-        $books_Author = $query->fetchAll(PDO::FETCH_OBJ);
-
-        return $books_Author;
-    }
-
     function deleteAuthorById($authorID) {
         $query = $this->db->prepare('DELETE FROM authors WHERE id_author = ?');
         $query->execute([$authorID]);

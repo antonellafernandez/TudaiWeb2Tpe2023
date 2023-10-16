@@ -65,12 +65,6 @@ switch ($params[0]) {
             $controller->deleteAuthorById($authorID);
         }
         break;
-    case 'verLibrosDelAutor':
-        $controller = new AuthorController();
-        if (isset($params[1])) 
-            $authorID = $params[1];
-            $controller->showBooks_Author($authorID);
-        break;
     case 'login':
         $controller = new AuthController();
         $controller->login();

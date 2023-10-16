@@ -3,7 +3,7 @@
 <div class="text-primary p-3 border border-primary">
     <p class="fw-bold fst-italic">Editar Autor (<?= $author->id_author ?>) <?= $author->name ?></p>
 
-    <form action="editarAutor/" method="POST">
+    <form action='<?= $author->id_author ?>' method="POST">
         <div class="row">
             <div class="col-3">
                 <div class="form-group">
