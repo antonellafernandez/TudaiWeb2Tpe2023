@@ -59,6 +59,7 @@ class LibraryController {
             $synopsis = $_POST['synopsis'];
 
             $this->model->updateBookData($id, $title, $publication_date, $id_author, $synopsis);
+
             header('Location: ' . BASE_URL . 'listarLibros');
         }
     }

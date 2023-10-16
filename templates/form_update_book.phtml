@@ -1,9 +1,9 @@
 <?php require 'templates/header_update.phtml' ?>
 
 <div class="text-primary p-3 border border-primary">
-    <p class="fw-bold fst-italic">Editar Libro</p>
+    <p class="fw-bold fst-italic">Editar Libro (<?= $book->id_book ?>) <?= $book->title ?></p>
 
-    <form action="editarLibro" method="POST">
+    <form action="editarLibro/" method="POST">
         <div class="row">
             <div class="col-3">
                 <div class="form-group">

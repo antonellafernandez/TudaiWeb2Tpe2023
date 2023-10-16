@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `authors` (
-  `id_author` int(100) NOT NULL,
+  `id_author` INT NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -55,7 +55,7 @@ INSERT INTO `authors` (`id_author`, `name`) VALUES
 --
 
 CREATE TABLE `books` (
-  `id_book` int(100) NOT NULL,
+  `id_book` INT NOT NULL AUTO_INCREMENT,
   `title` varchar(45) NOT NULL,
   `publication_date` int(4) NOT NULL,
   `id_author` int(100) NOT NULL,
@@ -96,7 +96,7 @@ INSERT INTO `books` (`id_book`, `title`, `publication_date`, `id_author`, `synop
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `user` varchar(45) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
