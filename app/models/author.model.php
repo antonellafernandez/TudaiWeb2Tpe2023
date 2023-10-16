@@ -54,13 +54,5 @@ class AuthorModel {
     function deleteAuthorById($authorID) {
         $query = $this->db->prepare('DELETE FROM authors WHERE id_author = ?');
         $query->execute([$authorID]);
-
-        if ($query->rowCount() > 0) {
-            // La eliminación fue exitosa
-            echo "Autor eliminado correctamente.";
-        } else {
-            // No se encontró un autor con el ID especificado
-            echo "No se encontró un autor con el ID especificado: " . $authorID;
-        }
     }
 }

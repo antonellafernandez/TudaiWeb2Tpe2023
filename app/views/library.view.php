@@ -9,8 +9,4 @@ class LibraryView {
     public function showUpdateForm($book, $authors) {
         require 'templates/form_update_book.phtml';
     }
-
-    public function showMessage($message) {
-        require 'templates/message.phtml';
-    }
 }

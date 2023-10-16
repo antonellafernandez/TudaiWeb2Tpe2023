@@ -19,6 +19,8 @@ class AuthorController {
     }
 
     public function showAuthor() {
+        AuthHelper::verify();
+
         $authors = $this->model->getAuthors();
         $books = $this->library_model->getBooks();
 
@@ -26,18 +28,22 @@ class AuthorController {
     }
 
     public function addAuthor() {
+        AuthHelper::verify();
+
         if (isset($_POST['name'])) {
             $name = $_POST['name'];
             $this->model->insertAuthor($name);
-            header('Location: ' . BASE_URL . 'mostrarAutor');
+            header('Location: ' . AUTORES);
         }
     }
 
     public function editAuthor($authorID) {
+        AuthHelper::verify();
+
         if (isset($_POST['name'])) {
             $name = $_POST['name'];
             $this->model->updateAuthorName($authorID, $name);
-            header("Location: " . BASE_URL . "mostrarAutor");
+            header("Location: " . AUTORES);
             exit;
         } else {
             $author = $this->model->getAuthorById($authorID);
@@ -46,14 +52,16 @@ class AuthorController {
     }
     
     public function showBooks_Author($authorID) {
-        $books_Author = $this->model->getBooksByAuthorID($authorID);
+        AuthHelper::verify();
 
-        // Llama a la función de vista para mostrar los libros del autor
-        $this->view->renderAuthorBooks($authorID, $books_Author);
+        $books_Author = $this->model->getBooksByAuthorID($authorID);
+        // VER
     }
     
     public function deleteAuthorById($authorID) {
+        AuthHelper::verify();
+        
         $this->model->deleteAuthorById($authorID);
-        header('Location: ' . BASE_URL . 'mostrarAutor');
+        header('Location: ' . AUTORES);
     }
 }

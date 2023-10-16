@@ -18,6 +18,8 @@ class LibraryController {
     }
 
     function get() {
+        AuthHelper::verify();
+
         $books = $this->model->getBooks();
         $authors = $this->author_model->getAuthors();
 
@@ -30,11 +32,15 @@ class LibraryController {
     }
 
     function delete($id) {
+        AuthHelper::verify();
+
         $this->model->deleteBook($id);
-        header('Location: ' . BASE_URL . 'listarLibros');
+        header('Location: ' . LIBROS);
     }
 
     function create() {
+        AuthHelper::verify();
+
         if (isset($_POST['title']) && isset($_POST['publication_date']) && isset($_POST['id_author']) && isset($_POST['synopsis'])) {
             $title = $_POST['title'];
             $publication_date = $_POST['publication_date'];
@@ -42,11 +48,13 @@ class LibraryController {
             $synopsis = $_POST['synopsis'];
 
             $this->model->insertBook($title, $publication_date, $id_author, $synopsis);
-            header('Location: ' . BASE_URL . 'listarLibros');
+            header('Location: ' . LIBROS);
         }
     }
 
     function update($id) {
+        AuthHelper::verify();
+        
         $book = $this->model->getBook($id);
         $authors = $this->author_model->getAuthors();
 
@@ -60,7 +68,7 @@ class LibraryController {
 
             $this->model->updateBookData($id, $title, $publication_date, $id_author, $synopsis);
 
-            header('Location: ' . BASE_URL . 'listarLibros');
+            header('Location: ' . LIBROS);
         }
     }
 }
