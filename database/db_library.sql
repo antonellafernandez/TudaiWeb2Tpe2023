@@ -99,6 +99,7 @@ CREATE TABLE `users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user` varchar(45) NOT NULL,
   `password` varchar(255) NOT NULL
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
