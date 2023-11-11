@@ -19,3 +19,8 @@
 <p>Se propone desarrollar un sitio web dinámico que permita la visualización y administración de un conjunto de ítems. El acceso al sitio estará disponible para cualquier persona, pero solo el usuario administrador tendrá los permisos necesarios para gestionar todos los ítems del sitio, incluyendo la creación, modificación y eliminación de los mismos.</p>
 
 <p>Los ítems deben estar modelados mediante una relación de 1 a N. Por ejemplo, se podrían pensar los ítems como pertenecientes a diferentes categorías, o como ítems que contienen un conjunto de componentes. Se permite cualquier modelo de datos que se adapte a esta relación.</p>
+
+<h4>Corrección</h4>
+<p>-2 a login y logout por falta del código PRIMARY KEY (`id`) en la tabla users.</p>
+
+<p>Aprobado con 8 cada integrante.</p>
